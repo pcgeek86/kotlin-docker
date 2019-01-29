@@ -11,6 +11,8 @@ This ready-to-go container image includes the basic tools to build Kotlin applic
 * Kotlin
 * Kscript (KotlinScript)
 * Vim
+* ZSH
+* oh-my-zsh
 
 ## Building the Container Image
 
@@ -21,5 +23,5 @@ This ready-to-go container image includes the basic tools to build Kotlin applic
 ## Running a Container
 
 ```
-docker run --rm --interactive --tty trevorsullivan/kotlin
+docker run --rm -it trevorsullivan/kotlin /bin/zsh
 ```
