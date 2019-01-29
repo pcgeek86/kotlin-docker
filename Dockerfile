@@ -1,7 +1,15 @@
 FROM ubuntu:latest
 
-COPY ["setup.sh", "/root"]
+MAINTAINER Trevor Sullivan
 
-WORKDIR /root
+RUN apt-get update && \
+  apt-get -y install curl zip unzip vim
 
-RUN bash setup.sh
+RUN curl -s "https://get.sdkman.io" | bash
+
+RUN source /root/.sdkman/bin/sdkman-init.sh && \
+  sdk install java && \
+  sdk install kotlin && \
+  sdk install kscript
+
+WORKDIR /work
